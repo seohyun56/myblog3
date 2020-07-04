@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<title>𝕊𝔼𝕆ℍ𝕐𝕌ℕ'𝕤</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" media='screen' />
+	<style>
+		form {text-align:right;margin:7px;}
+		header {font-family:Fantasy;}
+	</style>
+	</head>
+
+<body>
+	<div class='container'>
+
+	<header>
+	<br>
+	Welcome To My Playground -!
+	<form name="fo" method="get">
+		{% if user.is_authenticated %}
+			<span style = "font-size:20px;color:#C1B7F4;font-family:Fantasy;">Welcome, {{ user.username }}</span>
+			<input type="button" value="Logout" onclick="location.href='{% url 'user_logout' %}'">
+		{% else %}
+			<input type="button" value="Sign in" onclick="location.href='{% url 'user_login' %}'">
+			<input type="button" value="Sign up" onclick="location.href='{% url 'user_signup' %}'">
+		{% endif %}
+	</form>
+	</header>
+	<nav>
+
+	<ul>
+		<li><a href='#'><b>ⓗⓞⓜⓔ</b></a></li>
+		<li><a href="{% url 'photo' %}">🅗</a></li>
+		<li><a href="{% url 'visitors' %}">🅨</a></li>
+		<li><a href="{% url 'sns' %}">🅤</a></li>
+		<li><a href="{% url 'timetable' %}">🅝</a></li>
+		<li><a href="{% url 'music' %}">♩</a></li>
+
+	</ul>
+	</nav>
+
+	<div id='content'>
+	<br>
+	<br>
+	<center>
+	<br>
+	<input type="button" value="visitors' book" title="방명록" onclick="location.href='{% url 'visitors' %}'">
+	<br>
+	<br>
+	<br>
+	<img src="{% static 'images/keyboard.gif' %}" width="600" height="350" alt="이미지 없음">
+	</center>
+	</div>
+
+	</div>
+
+	<footer style="font-family:Times;">ⓒhyun</footer>
+</body>
+</html>

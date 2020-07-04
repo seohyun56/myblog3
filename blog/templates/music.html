@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<title>𝕊𝔼𝕆ℍ𝕐𝕌ℕ'𝕤</title>
+	<link rel='stylesheet' href="{% static 'css/style.css' %}" media='screen' />
+	<style>
+		form {text-align:right;margin:7px;}
+		header {font-family:Fantasy;}
+	</style>
+	</head>
+
+<body>
+	<div class='container'>
+
+	<header>
+	<br>
+	Welcome To My Playground -!
+	<form name="fo" method="get">
+		{% if user.is_authenticated %}
+			<span style = "font-size:20px;color:#C1B7F4;font-family:Fantasy;">Welcome, {{ user.username }}</span>
+			<input type="button" value="Logout" onclick="location.href='{% url 'user_logout' %}'">
+		{% else %}
+			<input type="button" value="Sign in" onclick="location.href='{% url 'user_login' %}'">
+			<input type="button" value="Sign up" onclick="location.href='{% url 'user_signup' %}'">
+		{% endif %}
+	</form>
+	</header>
+	<nav>
+	<ul>
+		<li><a href="{% url 'index' %}">🅗🅞🅜🅔</a></li>
+		<li><a href="{% url 'photo' %}">🅗</a></li>
+		<li><a href="{% url 'visitors' %}">🅨</a></li>
+		<li><a href="{% url 'sns' %}">🅤</a></li>
+		<li><a href="{% url 'timetable' %}">🅝</a></li>
+		<li><a href='#'><b>♩</b></a></li>
+
+	</ul>
+	</nav>
+
+	<div id='content'>
+	<br>
+	<br>
+	<center>
+	<br>
+	<article>
+	<table>
+		<tbody>
+			<tr>
+			<td><iframe width="560" height="315" src="https://www.youtube.com/embed/e2vBLd5Egnk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+			<td><iframe width="560" height="315" src="https://www.youtube.com/embed/lAx7C_uUhFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+			</tr>
+			<tr>
+			<td><iframe width="560" height="315" src="https://www.youtube.com/embed/k4V3Mo61fJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+			<td><iframe width="560" height="315" src="https://www.youtube.com/embed/3ze6drtwiE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+
+			</tr>
+		</tbody>
+	</table>
+
+	</center>
+	</article>
+	</div>
+
+	</div>
+
+	<footer style="font-family:Times;">ⓒhyun</footer>
+</body>
+</html>

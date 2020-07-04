@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+<center>
+    <form method="POST" enctype="multipart/form-data" style="text-align:left;margin:0px 0px 0px 310px">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <input type="submit" value="저장"/>
+    </form>
+    </center>
+</body>
+
+{% endblock %}

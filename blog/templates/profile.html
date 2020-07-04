@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	<div id='content'>
+	<br>
+	<br>
+	<center>
+	<br>
+	<input type="button" value="write your comment !" title="로그인 필수 !" onclick="location.href='{% url 'createBlog' %}'">
+	<br><br>
+
+	{%for blog in blogs %}
+		<main role="main">
+			<div>
+				<table style="border:3px double #C5C5C5;border-collapse:collapse">
+				<tr>
+					<h4><td width="60" style="text-align:center;border:1px solid #C5C5C5">제목</td><td style="border:1px solid #C5C5C5">{{ blog.title }}</td></h4>
+                </tr>
+				<tr>
+					<h4><td width="60" style="text-align:center;border:1px solid #C5C5C5">작성일</td><td style="border:1px solid #C5C5C5">{{ blog.pub_date }}</td></h4>
+                </tr>
+				<tr>
+					<h4><td width="60" style="text-align:center;border:1px solid #C5C5C5">작성자</td><td style="border:1px solid #C5C5C5">{{ blog.writer }}</td></h4>
+                </tr>
+				<tr>
+					<td width="60" style="text-align:center;border:1px solid #C5C5C5">내용</td><td style="border:1px solid #C5C5C5"><p class="lead">{{ blog.content | safe }}</p></td>
+                </tr>
+				</table>
+				<br>
+			</div>
+		</main>
+	{% endfor %}
+
+	</center>
+	</div>
+
+{% endblock %}

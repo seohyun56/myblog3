@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+		<title>𝕊𝔼𝕆ℍ𝕐𝕌ℕ'𝕤</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" media='screen' />
+		<style>
+		form {text-align:right; margin:7px;}
+		table {border-collapse:collapse;}
+		td, th {padding:15px;width : 160px;}
+		td, th {text-align:center;}
+		header {font-family:Fantasy;}
+
+		</style>
+	</head>
+
+<body>
+	<div class='container'>
+
+	<header>
+	<br>
+	Welcome To My Playground -!
+	<form name="fo" method="get">
+		{% if user.is_authenticated %}
+			<span style = "font-size:20px;color:#C1B7F4;font-family:Fantasy;">Welcome, {{ user.username }}</span>
+			<input type="button" value="Logout" onclick="location.href='{% url 'user_logout' %}'">
+		{% else %}
+			<input type="button" value="Sign in" onclick="location.href='{% url 'user_login' %}'">
+			<input type="button" value="Sign up" onclick="location.href='{% url 'user_signup' %}'">
+		{% endif %}
+	</form>
+	</header>
+	<nav>
+	<ul>
+		<li><a href="{% url 'index' %}">🅗🅞🅜🅔</a></li>
+		<li><a href="{% url 'photo' %}">🅗</a></li>
+		<li><a href="{% url 'visitors' %}">🅨</a></li>
+		<li><a href="{% url 'sns' %}">🅤</a></li>
+		<li><a href='#'><b>ⓝ</b></a></li>
+		<li><a href="{% url 'music' %}">♩</a></li>
+
+	</ul>
+	</nav>
+
+	<div id='content'>
+	<br>
+	<br>
+	<center>
+	<br>
+	<br>
+	<table border="1">
+		<thead>
+			<tr><th style="font-style:italic"><b>2020-1</b></th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th></tr>
+		</thead>
+		<tbody>
+			<tr><td>1교시</td><td rowspan="2" bgcolor="#FC5C49" style="color:white;">정보보호론</td><td></td><td rowspan="2" bgcolor="#FBD73B" style="color:white;">경영정보시스템</td><td></td><td></td></tr>
+			<tr><td>2교시</td><td></td><td></td><td></td></tr>
+			<tr><td>3교시</td><td rowspan="2" bgcolor="#FBD73B" style="color:white;">경영정보시스템</td><td></td><td rowspan="2" bgcolor="#FC5C49" style="color:white;">정보보호론</td><td></td><td></td></tr>
+			<tr><td>4교시</td><td></td><td></td><td></td></tr>
+			<tr><td>5교시</td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>6교시</td><td></td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>7교시</td><td rowspan="2" bgcolor="#5DDA43" style="color:white;">미래기술이해와<br>스타트업</td><td rowspan="4" bgcolor="#F79C3C" style="color:white;">C언어 I</td><td rowspan="2" bgcolor="#5DDA43" style="color:white;">미래기술이해와<br>스타트업</td><td></td><td></td></tr>
+			<tr><td>8교시</td><td></td><td></td></tr>
+			<tr><td>9교시</td><td rowspan="2" bgcolor="#43DAD9" style="color:white;">웹프로그래밍활용</td><td rowspan="2" bgcolor="#43DAD9" style="color:white;">웹프로그래밍활용</td><td></td><td></td></tr>
+			<tr><td>10교시</td><td></td><td></td></tr>
+			<tr><td>11교시</td><td bgcolor="#4389DA" style="color:white;">팀워크트레이닝</td><td rowspan="4" bgcolor="#AE62E9" style="color:white;">디지털게임개발을통한<br>컴퓨터의이해</td><td></td><td></td><td></td></tr>
+			<tr><td>12교시</td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>13교시</td><td></td><td></td><td></td><td></td></tr>
+			<tr><td>14교시</td><td></td><td></td><td></td><td></td></tr>
+		</tbody>
+	</table>
+	</center>
+	</div>
+
+	</div>
+
+	<footer style="font-family:Times;">ⓒhyun</footer>
+</body>
+</html>
