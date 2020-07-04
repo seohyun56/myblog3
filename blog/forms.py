@@ -17,7 +17,7 @@ class CreateBlog(forms.ModelForm):
             'writer' : forms.Select(
                 attrs={'class':'custom-select'}
             ),
-            'content' : forms.CharField(widget=CKEditorUploadingWidget()),
+            'contents' : forms.CharField(widget=CKEditorUploadingWidget()),
         }
 
 class UserForm(forms.ModelForm):
